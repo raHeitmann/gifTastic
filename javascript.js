@@ -17,7 +17,18 @@ for (var i = 0; i < creatures.length; i++)
 
 
 
-$(".buttons").on("click", function () 
+$(document).on("click", "#submitBtn",function()
+{
+	var input = $("#input").val();
+	console.log(input);
+	var s = $("<input type='button' class='buttons' value='"+input+"'>");
+	$('#buttons').append(s);
+	$("#input").val("");
+
+});
+
+
+$(document).on("click", ".buttons", function () 
 	{
 
 	var a = this.value;
@@ -41,17 +52,8 @@ $(".buttons").on("click", function ()
 	};
 
 	request.send();
-});
+	});
 
-
-
-$("#submitBtn").on("click", function()
-{
-	
-
-
-
-});
 
 
 
