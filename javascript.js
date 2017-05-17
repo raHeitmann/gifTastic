@@ -16,30 +16,6 @@ for (var i = 0; i < creatures.length; i++)
 	}
 
 
-// function add(q)
-// 	{
-// 	//q = $('#input').val().trim(); // search query
-	
-// 	request = new XMLHttpRequest;
-// 	request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q, true);
-// 	data = JSON.parse(request.responseText).data.image_url;
-// 			console.log(data);
-// 			$("#gifs").html('<center><img src = "'+data+'"  title="GIF via Giphy"></center>');
-
-
-// 	}
-
-
-
-
-// $(document.body).on("click", ".buttons", function() {
-
-//       // Get the number of the button from its data attribute and hold in a variable called  toDoNumber.
-//       var value = $(this).attr("value");
-//       add(value);
-//       // Select and Remove the specific <p> element that previously held the to do item number.
-     
-//     });
 
 $(".buttons").on("click", function () 
 	{
@@ -65,6 +41,16 @@ $(".buttons").on("click", function ()
 	};
 
 	request.send();
+});
+
+
+
+$("#submitBtn").on("click", function()
+{
+	
+
+
+
 });
 
 
