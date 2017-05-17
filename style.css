@@ -1,5 +1,6 @@
 #submitBtn
 {
+	text-align: center;
 	background-color: red;
 	color:white;
 	font-size: 38px;
@@ -9,10 +10,15 @@
 	margin-bottom:10px;
 }
 
-.button
+.buttons
 {
+	display: inline-block;
+	text-align: center;
+	font-size: 18px;
 	background-color: teal;
 	color: white;
 	height:40px;
-	width:60px;
+	
+	margin:5px;
+	padding:5px;
 }
