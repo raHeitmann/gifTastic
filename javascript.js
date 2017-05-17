@@ -41,8 +41,11 @@ for (var i = 0; i < creatures.length; i++)
      
 //     });
 
-$(".buttons").on("click", function () {
-	q = "finger guns"; // search query
+$(".buttons").on("click", function () 
+	{
+
+	var a = this.value;
+	q = a; // search query
 	
 	request = new XMLHttpRequest;
 	request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q, true);
