@@ -40,16 +40,22 @@ $(document).on("click", ".buttons", function ()
 	
 	
 	request = new XMLHttpRequest;
-	request.open('GET', 'http://api.giphy.com/v1/gifs/random?api_key=dc6zaTOxFJmzC&tag='+q, true);
+	request.open('GET', 'http://api.giphy.com/v1/gifs/search?q='+q+'&limit=10&api_key=dc6zaTOxFJmzC', true);
 	
 
 
 	request.onload = function() {
 		if (request.status >= 200 && request.status < 400){
-			data = JSON.parse(request.responseText).data.image_url;
+
+			
+			for (j=0;j<10;j++)
+			{
+			var data = (JSON.parse(request.responseText).data[j].images.original_still.url);
+			
 			console.log(data);
 			var duh = $('<span><center><img src = "'+data+'"  title="GIF via Giphy"></center></span>');
 			$("#giphyme").append(duh);
+			}
 
 		
 	
@@ -67,10 +73,9 @@ $(document).on("click", ".buttons", function ()
 
 	request.send();
 	
-
 	
-
-
+	
+	
 	
 
 	});
