@@ -21,3 +21,9 @@
 	margin:5px;
 	padding:5px;
 }
+
+.giffyGifs
+{
+	display:inline-block;
+	float:left;
+}

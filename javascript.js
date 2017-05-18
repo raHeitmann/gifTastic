@@ -15,7 +15,7 @@ for (var i = 0; i < creatures.length; i++)
 		$('#buttons').append(r);
 	}
 
-
+var clickable = [];
 
 $(document).on("click", "#submitBtn",function()
 {
@@ -27,9 +27,30 @@ $(document).on("click", "#submitBtn",function()
 
 });
 
+$(document).on("click", ".giffyGifs", function()
+{
+					var something = $(this).attr("src");
+					console.log(something+"something");
+					var word = "";
+					console.log(word);
+					word = something.toString();
+
+					var newWord = word.split("");
+
+					newWord.splice((newWord.length-6),2);
+					
+					console.log(newWord+"word");
+
+					console.log($(this));
+
+					$(this).attr("src", newWord);
+			});
+
 
 $(document).on("click", ".buttons", function () 
 	{
+
+		clickable = [""];
 
 		$("#giphyme").html("");
 
@@ -47,15 +68,18 @@ $(document).on("click", ".buttons", function ()
 	request.onload = function() {
 		if (request.status >= 200 && request.status < 400){
 
+
 			
-			for (j=0;j<10;j++)
+			for (var j=0;j<10;j++)
 			{
-			var data = (JSON.parse(request.responseText).data[j].images.original_still.url);
-			
+			var data = (JSON.parse(request.responseText).data[j].images.fixed_height_still.url);
+			clickable.push((JSON.parse(request.responseText).data[j].images.fixed_height.url));
 			console.log(data);
-			var duh = $('<span><center><img src = "'+data+'"  title="GIF via Giphy"></center></span>');
+			var duh = $('<span><center><img src = "'+data+'" class = "giffyGifs" id = "'+j+'" title="GIF via Giphy"></center></span>');
 			$("#giphyme").append(duh);
 			}
+
+				
 
 		
 	
@@ -75,10 +99,11 @@ $(document).on("click", ".buttons", function ()
 	
 	
 	
-	
-	
 
 	});
+
+//end of button click function
+
 
 
 
