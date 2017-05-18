@@ -1,3 +1,14 @@
+body
+{
+	background-image: url("images/underTheSea.jpg");
+	color:white;
+}
+
+p
+{
+	font-size: 24px;
+}
+
 #submitBtn
 {
 	text-align: center;
@@ -26,9 +37,11 @@
 {
 	display:inline-block;
 	float:left;
+	margin:5px;
 }
 .playing
 {
 	display:inline-block;
 	float:left;
+	margin:5px;
 }
