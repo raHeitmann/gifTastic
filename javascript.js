@@ -38,12 +38,21 @@ $(document).on("click", ".giffyGifs", function()
 					var newWord = word.split("");
 
 					newWord.splice((newWord.length-6),2);
-					
-					console.log(newWord+"word");
+					var lol = "";
+					for (var k = 0; k < newWord.length; k++)
+					{
+						lol+=(newWord[k]);
+
+					}
+
+
+					console.log(lol+" lol");
 
 					console.log($(this));
 
-					$(this).attr("src", newWord);
+					
+
+					$(this).attr("src", lol);
 			});
 
 
