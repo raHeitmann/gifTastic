@@ -27,8 +27,50 @@ $(document).on("click", "#submitBtn",function()
 
 });
 
+
+$(document).on("click", ".playing", function()
+{
+
+	//changes it back to still and its class back to giffyGifs
+
+		$(this).attr("class","giffyGifs");
+					var something = $(this).attr("src");
+					console.log(something+"something");
+					var word = "";
+					console.log(word);
+					word = something.toString();
+
+					var newWord = word.split("");
+
+					newWord.splice((newWord.length-4),0,"_s");
+					var lol = "";
+					for (var k = 0; k < newWord.length; k++)
+					{
+						lol+=(newWord[k]);
+
+					}
+
+
+					console.log(lol+" lol");
+
+					console.log($(this));
+
+					
+
+					$(this).attr("src", lol);
+
+
+
+});
+
+
+
+
 $(document).on("click", ".giffyGifs", function()
 {
+
+		//when clicked, the gif starts and its class changes to "playing"
+					$(this).attr("class","playing");
 					var something = $(this).attr("src");
 					console.log(something+"something");
 					var word = "";
