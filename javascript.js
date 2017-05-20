@@ -125,8 +125,10 @@ $(document).on("click", ".buttons", function ()
 			{
 			var data = (JSON.parse(request.responseText).data[j].images.fixed_height_still.url);
 			clickable.push((JSON.parse(request.responseText).data[j].images.fixed_height.url));
+			var rating = (JSON.parse(request.responseText).data[j].rating);
+			console.log(rating);
 			console.log(data);
-			var duh = $('<span><center><img src = "'+data+'" class = "giffyGifs" id = "'+j+'" title="GIF via Giphy"></center></span>');
+			var duh = $('<span id="pics"><center><img src = "'+data+'" class = "giffyGifs" id = "'+j+'" title="GIF via Giphy"><p id="rate">Rating: '+rating+'</p></center></span>');
 			$("#giphyme").append(duh);
 			}
 
