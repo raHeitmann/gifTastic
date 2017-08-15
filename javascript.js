@@ -110,6 +110,7 @@ $(document).on("click", ".buttons", function ()
 	var a = this.value;
 	q = a; // search query
 	
+	console.log(q);
 	
 	request = new XMLHttpRequest;
 	request.open('GET', 'http://api.giphy.com/v1/gifs/search?q='+q+'&limit=10&api_key=dc6zaTOxFJmzC', true);
